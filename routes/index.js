@@ -16,11 +16,14 @@ router.get('/', (req, res, next) => {
  */
 router.post('/update/:id', (req, res) => {
   for (let i = 0; i < status.length; i++) {
-    if (status[i].id === req.params.id) {
+    if (status[i].id == req.params.id) {
       status[i].status = 'on';
       status[i].lastTime = new Date();
+      res.sendStatus(200);
+      return;
     }
   }
+  res.sendStatus(404);
 });
 
 /**
