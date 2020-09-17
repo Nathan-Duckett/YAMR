@@ -6,7 +6,7 @@ let nextId = 1;
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.send(status);
+  res.json(status);
 });
 
 /**
@@ -38,7 +38,7 @@ router.post('/register', (req, res) => {
     "lastTime": new Date()
   }
   status.push(details);
-  res.status(201).send(details);
+  res.status(201).json(details);
 });
 
 module.exports = router;
